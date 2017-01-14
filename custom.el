@@ -5,7 +5,7 @@
 ;;---------------------------------------------------------------------
 ;; Color theme switcher
 ;;---------------------------------------------------------------------
-(when (display-graphic-p) (color-theme-zenburn))
+;;(when (display-graphic-p) (color-theme-zenburn))
 
 ;;---------------------------------------------------------------------
 ;; Key bindings
@@ -84,6 +84,7 @@
    (quote
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(doc-view-continuous t)
+ '(eshell-directory-name "/Users/jesus/.emacs.d/savefile/eshell")
  '(f90-beginning-ampersand nil)
  '(f90-leave-line-no t)
  '(f90-mode-hook (quote (f90-add-imenu-menu abbrev-mode auto-fill-mode)))
@@ -137,7 +138,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
@@ -145,18 +146,20 @@
  '(preview-auto-cache-preamble t)
  '(python-shell-interpreter "ipython2")
  '(python-shell-interpreter-args "-i --simple-prompt --pprint")
+ '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
- '(scroll-bar-mode nil)
- '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(solarized-use-variable-pitch nil)
  '(tabbar-mode t nil (tabbar))
+ '(tabbar-mwheel-mode t nil (tabbar))
  '(tabbar-use-images nil)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
- '(user-mail-address "")
+ '(tool-bar-mode nil)
+ '(tramp-default-method "sshx")
+ '(user-mail-address "jesus.rueda@uv.es")
  '(vc-annotate-background "#2B2B2B")
  '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
@@ -196,4 +199,8 @@
  '(default ((t (:slant normal :weight normal :height 130 :width normal :family "Ubuntu Mono derivative Powerline"))))
  '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4"))))
  '(fixed-pitch ((t (:inherit default))))
+ '(tabbar-default ((t (:inherit fixed-pitch :background "gray50" :foreground "grey75" :height 0.8))))
  '(variable-pitch ((t (:family "Helvetica")))))
+
+(provide 'custom)
+;;; custom.el ends here
