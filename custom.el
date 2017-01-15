@@ -16,7 +16,7 @@
 ;; Fortran 90 programming
 ;;---------------------------------------------------------------------
 ;; new keywords
-(font-lock-add-keywords 'f90-mode '(("\\<\\(dlog\\|dexp\\|dlog10\\|dsqrt\\|dabs\\|isnan\\|dmax1\\|dmin1\\|idnint\\)\\>" . font-lock-keyword-face)))
+(font-lock-add-keywords 'f90-mode '(("\\<\\(dlog\\|dexp\\|dlog10\\|dsqrt\\|dabs\\|isnan\\|dmax1\\|dmin1\\|idnint\\)\\>" . font-lock-builtin-face)))
 
 ;;---------------------------------------------------------------------
 ;; GNUplot
@@ -83,6 +83,8 @@
  '(custom-safe-themes
    (quote
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(dired-recursive-copies (quote always))
+ '(dired-recursive-deletes (quote always))
  '(doc-view-continuous t)
  '(eshell-directory-name "/Users/jesus/.emacs.d/savefile/eshell")
  '(f90-beginning-ampersand nil)
@@ -92,6 +94,21 @@
  '(fci-rule-color "#383838")
  '(fill-column 75)
  '(fortran-line-length 1000)
+ '(gnus-agent-enable-expiration (quote DISABLE))
+ '(gnus-cloud-synced-files
+   (quote
+    ("~/.authinfo.gpg" "~/.gnus.el"
+     (:directory "~/Mail" :match ".*.SCORE\\'"))))
+ '(gnus-fetch-old-headers t)
+ '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
+ '(gnus-select-method
+   (quote
+    (nnimap "post.uv.es"
+            (nnimap-inbox INBOX)
+            (nnimap-stream ssl)
+            (nnimap-authenticator login)
+            (nnimap-expunge non-nil)
+            (nnir-search-engine imap))))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -118,6 +135,10 @@
  '(indicate-empty-lines t)
  '(latex-preview-pane-multifile-mode (quote auctex))
  '(magit-diff-use-overlays nil)
+ '(mail-source-delete-old-incoming-confirm t)
+ '(mail-source-primary-source (quote non-nil))
+ '(mail-user-agent (quote gnus-user-agent))
+ '(message-send-mail-function (quote smtpmail-send-it))
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(nrepl-message-colors
    (quote
@@ -138,7 +159,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
@@ -146,11 +167,19 @@
  '(preview-auto-cache-preamble t)
  '(python-shell-interpreter "ipython2")
  '(python-shell-interpreter-args "-i --simple-prompt --pprint")
+ '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
+ '(send-mail-function (quote smtpmail-send-it))
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
+ '(smtpmail-debug-info t)
+ '(smtpmail-debug-verb t)
+ '(smtpmail-smtp-server "post.uv.es")
+ '(smtpmail-smtp-service 465)
+ '(smtpmail-smtp-user "jerue")
+ '(smtpmail-stream-type (quote ssl))
  '(solarized-use-variable-pitch nil)
  '(tabbar-mode t nil (tabbar))
  '(tabbar-mwheel-mode t nil (tabbar))
