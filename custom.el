@@ -65,6 +65,7 @@
      er/add-latex-mode-expansions)))
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(TeX-source-correlate-mode t)
+ '(alert-default-style (quote osx-notifier))
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
@@ -79,13 +80,15 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (zenburn)))
+ '(custom-enabled-themes (quote (smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
  '(display-time-24hr-format t)
+ '(display-time-mail-file (quote none))
+ '(display-time-mail-string "")
  '(display-time-mode t)
  '(doc-view-continuous t)
  '(eshell-directory-name "/Users/jesus/.emacs.d/savefile/eshell")
@@ -101,6 +104,10 @@
    (quote
     ("~/.authinfo.gpg" "~/.gnus.el"
      (:directory "~/Mail" :match ".*.SCORE\\'"))))
+ '(gnus-demon-handlers (quote ((gnus-demon-scan-mail 5 30))))
+ '(gnus-desktop-notify-behavior (quote gnus-desktop-notify-single))
+ '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
+ '(gnus-desktop-notify-mode t nil (gnus))
  '(gnus-fetch-old-headers t)
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
  '(gnus-select-method
@@ -161,7 +168,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
@@ -172,6 +179,7 @@
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
+ '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
  '(show-paren-mode t)
  '(size-indication-mode t)
