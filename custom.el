@@ -64,6 +64,7 @@
      er/add-latex-mode-expansions)))
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(TeX-source-correlate-mode t)
+ '(TeX-source-correlate-start-server t)
  '(TeX-view-program-list
    (quote
     (("DVI Viewer" "open %o")
@@ -85,6 +86,7 @@
  '(bbdb-vcard-skip-on-import (quote ("^X-GSM-" "^PHOTO")))
  '(calendar-date-style (quote european))
  '(column-number-mode t)
+ '(compilation-always-kill t)
  '(compilation-message-face (quote default))
  '(confirm-kill-emacs (quote yes-or-no-p))
  '(cua-global-mark-cursor-color "#2aa198")
@@ -102,7 +104,6 @@
  '(display-time-mail-file (quote none))
  '(display-time-mail-string "")
  '(display-time-mode t)
- '(doc-view-continuous t)
  '(eshell-directory-name "/Users/jesus/.emacs.d/savefile/eshell")
  '(f90-beginning-ampersand nil)
  '(f90-leave-line-no t)
