@@ -71,6 +71,9 @@
  '(ansi-color-names-vector
    ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
  '(auto-dim-other-buffers-mode t)
+ '(bbdb-complete-mail-allow-cycling t)
+ '(bbdb-vcard-directory "~/Documents/Contactos/")
+ '(bbdb-vcard-skip-on-import (quote ("^X-GSM-" "^PHOTO")))
  '(blink-cursor-mode t)
  '(calendar-date-style (quote european))
  '(column-number-mode t)
@@ -108,6 +111,7 @@
  '(gnus-desktop-notify-behavior (quote gnus-desktop-notify-single))
  '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
  '(gnus-desktop-notify-mode t nil (gnus))
+ '(gnus-dired-mail-mode (quote message-user-agent))
  '(gnus-fetch-old-headers t)
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
  '(gnus-select-method
@@ -147,6 +151,7 @@
  '(mail-source-delete-old-incoming-confirm t)
  '(mail-source-primary-source (quote non-nil))
  '(mail-user-agent (quote gnus-user-agent))
+ '(message-kill-buffer-on-exit t)
  '(message-send-mail-function (quote smtpmail-send-it))
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(nrepl-message-colors
@@ -168,14 +173,14 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (bbdb-vcard pdf-tools alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(preview-auto-cache-preamble t)
  '(python-shell-interpreter "ipython2")
- '(python-shell-interpreter-args "-i --simple-prompt --pprint")
+ '(python-shell-interpreter-args "--simple-prompt --pprint")
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
