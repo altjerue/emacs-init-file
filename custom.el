@@ -3,11 +3,6 @@
 ;;; Code:
 
 ;;---------------------------------------------------------------------
-;; Color theme switcher
-;;---------------------------------------------------------------------
-;;(when (display-graphic-p) (color-theme-zenburn))
-
-;;---------------------------------------------------------------------
 ;; Key bindings
 ;;---------------------------------------------------------------------
 (global-set-key (kbd "s-w") 'kill-this-buffer)
@@ -56,6 +51,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(LaTeX-command "latex --synctex=1")
  '(LaTeX-mode-hook
    (quote
     (turn-on-reftex
@@ -65,6 +61,16 @@
      er/add-latex-mode-expansions)))
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(TeX-source-correlate-mode t)
+ '(TeX-view-program-list
+   (quote
+    (("DVI Viewer" "open %o")
+     ("PDF Tools" TeX-pdf-tools-sync-view)
+     ("HTML Viewer" "open %o"))))
+ '(TeX-view-program-selection
+   (quote
+    ((output-dvi "DVI Viewer")
+     (output-pdf "PDF Tools")
+     (output-html "HTML Viewer"))))
  '(alert-default-style (quote osx-notifier))
  '(ansi-color-faces-vector
    [default default default italic underline success warning error])
@@ -168,7 +174,8 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (pdf-tools alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+ '(pdf-info-log t)
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#073642")
@@ -181,6 +188,7 @@
  '(reftex-plug-into-AUCTeX t)
  '(scroll-bar-mode nil)
  '(send-mail-function (quote smtpmail-send-it))
+ '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
