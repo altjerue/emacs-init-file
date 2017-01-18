@@ -2,6 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
+;; Start server
+(server-start)
+
 ;;---------------------------------------------------------------------
 ;; Key bindings
 ;;---------------------------------------------------------------------
@@ -80,7 +83,6 @@
  '(bbdb-complete-mail-allow-cycling t)
  '(bbdb-vcard-directory "~/Documents/Contactos/")
  '(bbdb-vcard-skip-on-import (quote ("^X-GSM-" "^PHOTO")))
- '(blink-cursor-mode t)
  '(calendar-date-style (quote european))
  '(column-number-mode t)
  '(compilation-message-face (quote default))
@@ -89,10 +91,11 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (smart-mode-line-respectful)))
+ '(custom-enabled-themes (quote (ubuntu smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
     ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(custom-theme-allow-multiple-selections t)
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
  '(display-time-24hr-format t)
@@ -109,6 +112,7 @@
  '(fill-column 75)
  '(fortran-line-length 1000)
  '(gnus-agent-enable-expiration (quote DISABLE))
+ '(gnus-build-sparse-threads (quote more))
  '(gnus-cloud-synced-files
    (quote
     ("~/.authinfo.gpg" "~/.gnus.el"
@@ -118,8 +122,10 @@
  '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
  '(gnus-desktop-notify-mode t nil (gnus))
  '(gnus-dired-mail-mode (quote message-user-agent))
+ '(gnus-extract-address-components (quote mail-extract-address-components))
  '(gnus-fetch-old-headers t)
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
+ '(gnus-refer-thread-use-nnir t)
  '(gnus-select-method
    (quote
     (nnimap "post.uv.es"
@@ -128,6 +134,13 @@
             (nnimap-authenticator login)
             (nnimap-expunge non-nil)
             (nnir-search-engine imap))))
+ '(gnus-subthread-sort-functions (quote ((not gnus-thread-sort-by-most-recent-date))))
+ '(gnus-summary-line-format "%U%R%z%B%(%[%k: %-23,23f%]%) %s
+")
+ '(gnus-summary-make-false-root (quote none))
+ '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
+ '(gnus-thread-hide-subtree nil)
+ '(gnus-thread-sort-functions (quote (gnus-thread-sort-by-most-recent-date)))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
