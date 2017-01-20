@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(disable-theme 'zenburn)
+
 ;; Start server
 (server-start)
 
@@ -9,6 +11,7 @@
 ;; Key bindings
 ;;---------------------------------------------------------------------
 (global-set-key (kbd "s-w") 'kill-this-buffer)
+(global-set-key (kbd "C-x C-c") 'delete-frame)
 
 ;;---------------------------------------------------------------------
 ;; Fortran 90 programming
@@ -81,10 +84,9 @@
      (output-pdf "PDF Tools")
      (output-html "HTML Viewer"))))
  '(alert-default-style (quote osx-notifier))
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
  '(ansi-color-names-vector
-   ["#3F3F3F" "#CC9393" "#7F9F7F" "#F0DFAF" "#8CD0D3" "#DC8CC3" "#93E0E3" "#DCDCCC"])
+   ["#3c4446" "#d81e00" "#5ea702" "#cfae00" "#427ab3" "#89658e" "#00a7aa" "#dbded8"])
+ '(auth-source-save-behavior nil)
  '(auto-dim-other-buffers-mode t)
  '(bbdb-complete-mail-allow-cycling t)
  '(bbdb-vcard-directory "~/Documents/Contactos/")
@@ -101,7 +103,7 @@
  '(custom-enabled-themes (quote (ubuntu smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
-    ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "4e753673a37c71b07e3026be75dc6af3efbac5ce335f3707b7d6a110ecb636a3" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(custom-theme-allow-multiple-selections t)
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
@@ -130,6 +132,8 @@
  '(gnus-dired-mail-mode (quote message-user-agent))
  '(gnus-extract-address-components (quote mail-extract-address-components))
  '(gnus-fetch-old-headers t)
+ '(gnus-group-mode-hook (quote (gnus-topic-mode gnus-agent-mode)))
+ '(gnus-message-setup-hook (quote (message-remove-blank-cited-lines)))
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
  '(gnus-refer-thread-use-nnir t)
  '(gnus-select-method
@@ -143,33 +147,11 @@
  '(gnus-subthread-sort-functions (quote ((not gnus-thread-sort-by-most-recent-date))))
  '(gnus-summary-line-format "%U%R%z%B%(%[%k: %-23,23f%]%) %s
 ")
- '(gnus-summary-make-false-root (quote none))
+ '(gnus-summary-make-false-root (quote empty))
  '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
  '(gnus-thread-hide-subtree nil)
  '(gnus-thread-sort-functions (quote (gnus-thread-sort-by-most-recent-date)))
- '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#002b36" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
- '(highlight-symbol-foreground-color "#93a1a1")
- '(highlight-tail-colors
-   (quote
-    (("#073642" . 0)
-     ("#546E00" . 20)
-     ("#00736F" . 30)
-     ("#00629D" . 50)
-     ("#7B6000" . 60)
-     ("#8B2C02" . 70)
-     ("#93115C" . 85)
-     ("#073642" . 100))))
- '(hl-bg-colors
-   (quote
-    ("#7B6000" "#8B2C02" "#990A1B" "#93115C" "#3F4D91" "#00629D" "#00736F" "#546E00")))
- '(hl-fg-colors
-   (quote
-    ("#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36" "#002b36")))
+ '(helm-autoresize-mode t)
  '(indicate-empty-lines t)
  '(latex-preview-pane-multifile-mode (quote auctex))
  '(magit-diff-use-overlays nil)
@@ -179,6 +161,7 @@
  '(message-kill-buffer-on-exit t)
  '(message-send-mail-function (quote smtpmail-send-it))
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
+ '(nnmail-expiry-target "nnimap+post.uv.es:INBOX.Trash")
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
@@ -198,13 +181,13 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (bbdb-vcard pdf-tools alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize solarized-theme julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (fill-column-indicator helm-flycheck helm-make helm-bbdb web-mode helm-ag helm-descbinds helm-core bbdb-vcard pdf-tools alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
- '(pos-tip-background-color "#073642")
- '(pos-tip-foreground-color "#93a1a1")
+ '(prelude-whitespace nil)
  '(preview-auto-cache-preamble t)
  '(python-shell-interpreter "python2")
+ '(python-shell-interpreter-args "-i")
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
@@ -224,13 +207,9 @@
  '(tabbar-mode t nil (tabbar))
  '(tabbar-mwheel-mode t nil (tabbar))
  '(tabbar-use-images nil)
- '(term-default-bg-color "#002b36")
- '(term-default-fg-color "#839496")
- '(tool-bar-mode nil)
- '(tramp-default-method "sshx")
+ '(tramp-default-method "ssh")
  '(user-mail-address "jesus.rueda@uv.es")
  '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-background-mode nil)
  '(vc-annotate-color-map
    (quote
     ((20 . "#BC8383")
@@ -251,15 +230,7 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3")
- '(weechat-color-list
-   (quote
-    (unspecified "#002b36" "#073642" "#990A1B" "#dc322f" "#546E00" "#859900" "#7B6000" "#b58900" "#00629D" "#268bd2" "#93115C" "#d33682" "#00736F" "#2aa198" "#839496" "#657b83")))
- '(whitespace-line-column 1000)
- '(xterm-color-names
-   ["#073642" "#dc322f" "#859900" "#b58900" "#268bd2" "#d33682" "#2aa198" "#eee8d5"])
- '(xterm-color-names-bright
-   ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
+ '(vc-annotate-very-old-color "#DC8CC3"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
