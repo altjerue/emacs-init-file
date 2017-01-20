@@ -125,7 +125,7 @@
    (quote
     ("~/.authinfo.gpg" "~/.gnus.el"
      (:directory "~/Mail" :match ".*.SCORE\\'"))))
- '(gnus-demon-handlers (quote ((gnus-demon-scan-mail 5 30))))
+ '(gnus-demon-handlers (quote ((gnus-demon-scan-mail 2 t))))
  '(gnus-desktop-notify-behavior (quote gnus-desktop-notify-single))
  '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
  '(gnus-desktop-notify-mode t nil (gnus))
@@ -144,16 +144,15 @@
             (nnimap-authenticator login)
             (nnimap-expunge non-nil)
             (nnir-search-engine imap))))
- '(gnus-subthread-sort-functions (quote ((not gnus-thread-sort-by-most-recent-date))))
- '(gnus-summary-line-format "%U%R%z%B%(%[%k: %-23,23f%]%) %s
+ '(gnus-subthread-sort-functions (quote (gnus-thread-sort-by-date)))
+ '(gnus-summary-line-format "%U%R%z %(%5k  %-15,15&user-date;  %-23,23f  %B%s%)
 ")
- '(gnus-summary-make-false-root (quote empty))
  '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
  '(gnus-thread-hide-subtree nil)
  '(gnus-thread-sort-functions (quote (gnus-thread-sort-by-most-recent-date)))
- '(helm-autoresize-mode t)
  '(indicate-empty-lines t)
  '(latex-preview-pane-multifile-mode (quote auctex))
+ '(locate-command "mdfind -name")
  '(magit-diff-use-overlays nil)
  '(mail-source-delete-old-incoming-confirm t)
  '(mail-source-primary-source (quote non-nil))
@@ -181,7 +180,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (fill-column-indicator helm-flycheck helm-make helm-bbdb web-mode helm-ag helm-descbinds helm-core bbdb-vcard pdf-tools alert gnus-desktop-notify offlineimap helm-projectile helm latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
@@ -239,7 +238,7 @@
  '(default ((t (:slant normal :weight normal :height 130 :width normal :family "Ubuntu Mono derivative Powerline"))))
  '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4"))))
  '(fixed-pitch ((t (:inherit default))))
- '(tabbar-default ((t (:inherit fixed-pitch :background "gray50" :foreground "grey75" :height 0.8))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "gray45" :foreground "grey90" :weight semi-bold :height 0.8))))
  '(variable-pitch ((t (:family "Helvetica")))))
 
 (provide 'custom)
