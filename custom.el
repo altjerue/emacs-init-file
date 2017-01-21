@@ -5,13 +5,11 @@
 (disable-theme 'zenburn)
 
 ;; Start server
-(server-start)
+;; (server-start)
 
 ;; Initializing pdf-tools
 (pdf-tools-install)
 (eval-after-load 'org '(require 'org-pdfview))
-(add-to-list 'org-file-apps '("\\.pdf\\'" . org-pdfview-open))
-(add-to-list 'org-file-apps '("\\.pdf::\\([[:digit:]]+\\)\\'" . org-pdfview-open))
 
 ;;---------------------------------------------------------------------
 ;; Key bindings
@@ -191,8 +189,6 @@
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
  '(preview-auto-cache-preamble t)
- '(python-shell-interpreter "python2")
- '(python-shell-interpreter-args "-i")
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
