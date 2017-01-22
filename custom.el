@@ -5,7 +5,7 @@
 (disable-theme 'zenburn)
 
 ;; Start server
-;; (server-start)
+(server-start)
 
 ;; Initializing pdf-tools
 (pdf-tools-install)
@@ -189,6 +189,8 @@
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
  '(preview-auto-cache-preamble t)
+ '(python-shell-interpreter "ipython")
+ '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-plug-into-AUCTeX t)
