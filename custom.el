@@ -162,7 +162,13 @@
             (nnimap-expunge non-nil)
             (nnir-search-engine imap)
             (nnimap-split-methods
-             ("mail.Finished" "^Subject:.*FINISHED*")))))
+             (quote
+              (("INBOX.Finished" "Subject:.*FINISHED.*")
+               ("INBOX.CONACYT" "^From:.*Conacyt Agencia Informativa")
+               ("INBOX.Junk" "To:.*pachanga\\_de\\_futbito.*")
+               ("INBOX.Junk" "^From:.*Rolf Rabenseifner")
+               ("INBOX.PhD.SEMINARI" "Subject:.*SEMINARI.*")
+               ("INBOS.Junk" "From:.*linkedin.*")))))))
  '(gnus-server-mode-hook (quote (gnus-agent-mode)))
  '(gnus-startup-hook (quote (bbdb-insinuate-gnus)))
  '(gnus-subthread-sort-functions (quote (gnus-thread-sort-by-date)))
@@ -171,6 +177,7 @@
  '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
  '(gnus-thread-hide-subtree nil)
  '(gnus-thread-sort-functions (quote (gnus-thread-sort-by-most-recent-date)))
+ '(gnus-use-full-window nil)
  '(indicate-empty-lines t)
  '(latex-preview-pane-multifile-mode (quote auctex))
  '(locate-command "mdfind -name")
@@ -201,7 +208,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (org-pdfview fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (visual-regexp org-pdfview fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
@@ -259,5 +266,5 @@
  '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4"))))
  '(tabbar-default ((t (:inherit variable-pitch :background "gray45" :foreground "grey90" :weight semi-bold :height 0.8)))))
 
-(provide 'custom)
+;; (provide 'custom)
 ;;; custom.el ends here
