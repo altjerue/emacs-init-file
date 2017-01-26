@@ -7,9 +7,18 @@
 ;; Start server
 (server-start)
 
+;; gnus desktop notify
+(gnus-desktop-notify-mode)
+(gnus-demon-add-scanmail)
+
 ;; Initializing pdf-tools
 (pdf-tools-install)
 (eval-after-load 'org '(require 'org-pdfview))
+
+;; Bbdb
+(load "bbdb-com" t)
+(bbdb-initialize 'gnus)
+
 
 ;;---------------------------------------------------------------------
 ;; Key bindings
@@ -48,12 +57,15 @@
                                          "*Summary INBOX*"
                                          "*Article INBOX*"))
                  (list "#Mail"))
-;;                ((string-match-p "^\\*.+\\*$" (buffer-name))
+                ;;                ((string-match-p "^\\*.+\\*$" (buffer-name))
                 ((string-match-p "^\\*.+$" (buffer-name))
                  (list "#Rest"))
                 ((string-match-p "/.emacs.d/" dir)
                  (list ".emacs.d"))
+                ((string-match-p "\*.?Python\[?.*\]?\*" dir)
+                 (list "#Python"))
                 (t (list dir))))))
+
 ;; (setq tabbar-buffer-list-function
 ;;       (lambda ()
 ;;         (remove-if
@@ -130,14 +142,14 @@
    (quote
     ("~/.authinfo.gpg" "~/.gnus.el"
      (:directory "~/Mail" :match ".*.SCORE\\'"))))
- '(gnus-demon-handlers (quote ((gnus-demon-scan-mail 2 t))))
+ '(gnus-demon-handlers (quote ((gnus-group-get-new-news 2 t))))
  '(gnus-desktop-notify-behavior (quote gnus-desktop-notify-single))
- '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
  '(gnus-desktop-notify-mode t nil (gnus))
+ '(gnus-desktop-notify-send-switches (quote ("-i" "/Users/jesus/Pictures/icons/index.png")))
  '(gnus-dired-mail-mode (quote message-user-agent))
  '(gnus-extract-address-components (quote mail-extract-address-components))
  '(gnus-fetch-old-headers t)
- '(gnus-group-mode-hook (quote (gnus-topic-mode gnus-agent-mode)))
+ '(gnus-group-mode-hook (quote (gnus-topic-mode gnus-agent-mode gnus-demon-init)))
  '(gnus-message-setup-hook (quote (message-remove-blank-cited-lines)))
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
  '(gnus-refer-thread-use-nnir t)
@@ -148,7 +160,11 @@
             (nnimap-stream ssl)
             (nnimap-authenticator login)
             (nnimap-expunge non-nil)
-            (nnir-search-engine imap))))
+            (nnir-search-engine imap)
+            (nnimap-split-methods
+             ("mail.Finished" "^Subject:.*FINISHED*")))))
+ '(gnus-server-mode-hook (quote (gnus-agent-mode)))
+ '(gnus-startup-hook (quote (bbdb-insinuate-gnus)))
  '(gnus-subthread-sort-functions (quote (gnus-thread-sort-by-date)))
  '(gnus-summary-line-format "%U%R%z %(%5k  %-15,15&user-date;  %-23,23f  %B%s%)
 ")
