@@ -92,6 +92,7 @@
    ["#3c4446" "#d81e00" "#5ea702" "#cfae00" "#427ab3" "#89658e" "#00a7aa" "#dbded8"])
  '(auth-source-save-behavior nil)
  '(auto-dim-other-buffers-mode t)
+ '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
  '(bbdb-complete-mail-allow-cycling t)
  '(bbdb-vcard-directory "~/Documents/Contactos/")
  '(bbdb-vcard-skip-on-import (quote ("^X-GSM-" "^PHOTO")))
@@ -104,10 +105,10 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (ubuntu smart-mode-line-respectful)))
+ '(custom-enabled-themes (quote (tango smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
-    ("9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(custom-theme-allow-multiple-selections t)
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
@@ -184,7 +185,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (org-pdfview fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane ubuntu-theme gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (org-pdfview fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
@@ -239,11 +240,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:slant normal :weight normal :height 130 :width normal :family "Ubuntu Mono derivative Powerline"))))
  '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4"))))
- '(fixed-pitch ((t (:inherit default))))
- '(tabbar-default ((t (:inherit variable-pitch :background "gray45" :foreground "grey90" :weight semi-bold :height 0.8))))
- '(variable-pitch ((t (:family "Helvetica")))))
+ '(tabbar-default ((t (:inherit variable-pitch :background "gray45" :foreground "grey90" :weight semi-bold :height 0.8)))))
 
 (provide 'custom)
 ;;; custom.el ends here
