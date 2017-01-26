@@ -100,8 +100,6 @@
      (output-pdf "PDF Tools")
      (output-html "HTML Viewer"))))
  '(alert-default-style (quote osx-notifier))
- '(ansi-color-names-vector
-   ["#3c4446" "#d81e00" "#5ea702" "#cfae00" "#427ab3" "#89658e" "#00a7aa" "#dbded8"])
  '(auth-source-save-behavior nil)
  '(auto-dim-other-buffers-mode t)
  '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
@@ -223,7 +221,6 @@
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(size-indication-mode t)
- '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
  '(smtpmail-debug-info t)
  '(smtpmail-debug-verb t)
  '(smtpmail-smtp-server "post.uv.es")
