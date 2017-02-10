@@ -1,0 +1,23 @@
+* [[elisp:(org-projectile:open-project%20"emacs-init-file")][emacs-init-file]] [0/0]
+  :PROPERTIES:
+  :CATEGORY: emacs-init-file
+  :END:
+** TODO Customize org-password manager
+   :PROPERTIES:
+   :ID:       0B6D17E4-BB8B-4418-85AA-149198601E74
+   :END:
+*** TODO Export 1Password data to csv
+    :PROPERTIES:
+    :ID:       0CD0EAEC-8CAD-4C43-AACC-D0A9C5B60A71
+    :END:
+*** TODO Import that into org password manager
+    :PROPERTIES:
+    :ID:       6CDBBF84-F369-4376-B735-A51272E1126B
+    :END:
+** TODO This is for emacs
+   :PROPERTIES:
+   :ID:       46118264-92F6-4680-9C39-C5796245593A
+   :END:
+** TODO commit changes
+   SCHEDULED: <2017-02-10 Fri 11:45>
+

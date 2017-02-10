@@ -7,6 +7,25 @@
 ;; Start server
 (server-start)
 
+;; ------------------------------  Org Mode --------------------------------
+;;
+;; --> Org-projectile
+(require 'org-projectile)
+(org-projectile:prompt)
+(add-to-list 'org-capture-templates
+             (org-projectile:project-todo-entry "l" "* TODO %? %a\n" "Linked Project TODO"))
+(add-to-list 'org-capture-templates
+             (org-projectile:project-todo-entry "t" "* TODO %? \n" "Simple TODO entry"))
+(add-to-list 'org-capture-templates
+             (org-projectile:project-todo-entry "p"))
+(setq org-confirm-elisp-link-function nil)
+(setq org-agenda-files (append org-agenda-files (org-projectile:todo-files)))
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c M-c") 'org-projectile:project-todo-completing-read)
+
+;; --> Org Mobile
+
+
 (require 'nnir)
 
 (custom-set-variables
@@ -59,6 +78,8 @@
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(custom-theme-allow-multiple-selections t)
+ '(default-input-method "spanish-prefix")
+ '(diary-file "~/org/diary")
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
  '(display-time-24hr-format t)
@@ -129,8 +150,31 @@
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
+ '(org-agenda-files
+   (quote
+    ("~/lab/software/Python/MachineLearning2017/ML_todo.org")))
+ '(org-agenda-include-diary t)
+ '(org-capture-templates
+   (quote
+    (("l" "Linked Project TODO" entry
+      (function
+       (lambda nil
+         (org-projectile:location-for-project
+          (org-projectile:project-heading-from-file
+           (org-capture-get :original-file)))))
+      "* TODO %? %a
+")
+     ("p" "Project Todo" entry
+      (function
+       (lambda nil
+         (org-projectile:location-for-project
+          (org-projectile:project-heading-from-file
+           (org-capture-get :original-file)))))
+      "* TODO %?
+"))))
  '(org-export-backends (quote (ascii beamer html icalendar latex man)))
  '(org-hide-leading-stars t)
+ '(org-mobile-directory "~/Dropbox/Aplicaciones/MobileOrg")
  '(org-tags-column -75)
  '(org2blog/wp-blog-alist
    (quote
@@ -145,7 +189,7 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (neotree visual-regexp org-pdfview fill-column-indicator web-mode bbdb-vcard pdf-tools alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-sagemath ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (magit magit-popup which-key realgud org-projectile org-password-manager org-mobile-sync visual-regexp org-pdfview fill-column-indicator bbdb-vcard alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char volatile-highlights undo-tree smartrep smart-mode-line operate-on-number move-text projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
  '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
@@ -217,7 +261,6 @@
 ;; Bbdb
 (load "bbdb-com" t)
 (bbdb-initialize 'gnus)
-
 
 ;;---------------------------------------------------------------------
 ;; Key bindings
