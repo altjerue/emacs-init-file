@@ -55,8 +55,8 @@
      (output-pdf "PDF Tools")
      (output-html "HTML Viewer"))))
  '(alert-default-style (quote notifier))
- '(ansi-color-names-vector
-   ["#3c4446" "#d81e00" "#5ea702" "#cfae00" "#427ab3" "#89658e" "#00a7aa" "#dbded8"])
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
  '(auth-source-save-behavior nil)
  '(auto-dim-other-buffers-mode t)
  '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
@@ -73,7 +73,7 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
- '(custom-enabled-themes (quote (smart-mode-line-respectful tango)))
+ '(custom-enabled-themes (quote (smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "9d91458c4ad7c74cf946bd97ad085c0f6a40c370ac0a1cbeb2e3879f15b40553" "3d5307e5d6eb221ce17b0c952aa4cf65dbb3fa4a360e12a71e03aab78e0176c5" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
@@ -91,7 +91,6 @@
  '(f90-leave-line-no t)
  '(f90-mode-hook (quote (f90-add-imenu-menu abbrev-mode auto-fill-mode)))
  '(f90-program-indent 0)
- '(fci-rule-color "#383838")
  '(fill-column 75)
  '(fortran-line-length 1000)
  '(gnus-agent-enable-expiration (quote DISABLE))
@@ -108,6 +107,7 @@
  '(gnus-extract-address-components (quote mail-extract-address-components))
  '(gnus-fetch-old-headers t)
  '(gnus-group-mode-hook (quote (gnus-topic-mode gnus-agent-mode gnus-demon-init)))
+ '(gnus-inhibit-mime-unbuttonizing t)
  '(gnus-message-setup-hook (quote (message-remove-blank-cited-lines)))
  '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
  '(gnus-refer-thread-use-nnir t)
@@ -135,8 +135,13 @@
  '(mail-source-delete-old-incoming-confirm t)
  '(mail-source-primary-source (quote non-nil))
  '(mail-user-agent (quote gnus-user-agent))
+ '(message-forward-as-mime nil)
+ '(message-forward-included-headers (quote ("Subject" "Date" "From" "To")))
+ '(message-forward-show-mml nil)
  '(message-kill-buffer-on-exit t)
+ '(message-make-forward-subject-function (quote message-forward-subject-fwd))
  '(message-send-mail-function (quote smtpmail-send-it))
+ '(message-wash-forwarded-subjects t)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(nnmail-expiry-target "nnimap+post.uv.es:INBOX.Trash")
  '(nnmail-split-methods
@@ -147,9 +152,6 @@
      ("INBOX.Junk" "^From:.*Rolf Rabenseifner.*")
      ("INBOX.PhD.SEMINARI" "Subject:.*SEMINARI.*")
      ("INBOS.Junk" "From:.*linkedin.*"))))
- '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
     ("~/lab/software/Python/MachineLearning2017/ML_todo.org")))
@@ -189,12 +191,10 @@
  '(org2blog/wp-use-tags-as-categories t)
  '(package-selected-packages
    (quote
-    (magit magit-popup which-key realgud org-projectile org-password-manager org-mobile-sync visual-regexp org-pdfview fill-column-indicator bbdb-vcard alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char volatile-highlights undo-tree smartrep smart-mode-line operate-on-number move-text projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (neotree magit magit-popup which-key realgud org-projectile org-password-manager org-mobile-sync visual-regexp org-pdfview fill-column-indicator bbdb-vcard alert offlineimap latex-preview-pane gnuplot-mode ein markdown-mode htmlize julia-mode julia-shell ob-swift tabbar org2blog auto-dim-other-buffers auctex geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-ubiquitous flx-ido vkill exec-path-from-shell zop-to-char volatile-highlights undo-tree smartrep smart-mode-line operate-on-number move-text projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(pdf-latex-command "~/bin/llatex")
- '(pdf-view-midnight-colors (quote ("#bebebe" . "#171717")))
  '(prelude-whitespace nil)
- '(preview-auto-cache-preamble t)
- '(python-shell-interpreter "ipython")
+ '(python-shell-interpreter "ipython2")
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
@@ -216,29 +216,7 @@
  '(tabbar-use-images nil)
  '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(user-mail-address "jesus.rueda@uv.es")
- '(vc-annotate-background "#2B2B2B")
- '(vc-annotate-color-map
-   (quote
-    ((20 . "#BC8383")
-     (40 . "#CC9393")
-     (60 . "#DFAF8F")
-     (80 . "#D0BF8F")
-     (100 . "#E0CF9F")
-     (120 . "#F0DFAF")
-     (140 . "#5F7F5F")
-     (160 . "#7F9F7F")
-     (180 . "#8FB28F")
-     (200 . "#9FC59F")
-     (220 . "#AFD8AF")
-     (240 . "#BFEBBF")
-     (260 . "#93E0E3")
-     (280 . "#6CA0A3")
-     (300 . "#7CB8BB")
-     (320 . "#8CD0D3")
-     (340 . "#94BFF3")
-     (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(user-mail-address "jesus.rueda@uv.es"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
