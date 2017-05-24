@@ -33,11 +33,15 @@
  ;; If there is more than one, they won't work right.
  '(LaTeX-mode-hook
    (quote
-    (turn-on-reftex
-     (lambda nil
-       (run-hooks
-        (quote prelude-latex-mode-hook)))
-     er/add-latex-mode-expansions)))
+    (preview-mode-setup turn-on-reftex
+                        (lambda nil
+                          (local-set-key
+                           (kbd "<S-s-mouse-1>")
+                           (function TeX-view)))
+                        (lambda nil
+                          (run-hooks
+                           (quote prelude-latex-mode-hook)))
+                        er/add-latex-mode-expansions)))
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(TeX-auto-save t)
  '(TeX-master nil)
@@ -47,7 +51,7 @@
  '(TeX-view-program-list
    (quote
     (("DVI Viewer" "open %o")
-     ("PDF Tools" TeX-pdf-tools-sync-view)
+     ("PDF Tools" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")
      ("HTML Viewer" "open %o"))))
  '(TeX-view-program-selection
    (quote
