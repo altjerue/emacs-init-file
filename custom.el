@@ -35,10 +35,6 @@
    (quote
     (preview-mode-setup turn-on-reftex
                         (lambda nil
-                          (local-set-key
-                           (kbd "<S-s-mouse-1>")
-                           (function TeX-view)))
-                        (lambda nil
                           (run-hooks
                            (quote prelude-latex-mode-hook)))
                         er/add-latex-mode-expansions)))
