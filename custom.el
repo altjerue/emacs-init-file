@@ -101,9 +101,6 @@
  '(auth-source-save-behavior nil)
  '(auto-dim-other-buffers-mode t)
  '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
- '(bbdb-complete-mail-allow-cycling t)
- '(bbdb-vcard-directory "~/Documents/Contactos/")
- '(bbdb-vcard-skip-on-import (quote ("^X-GSM-" "^PHOTO")))
  '(blink-cursor-mode nil)
  '(calendar-date-style (quote european))
  '(column-number-mode t)
@@ -123,10 +120,6 @@
  '(diary-file "~/org/diary")
  '(dired-recursive-copies (quote always))
  '(dired-recursive-deletes (quote always))
- '(display-time-24hr-format t)
- '(display-time-mail-file (quote none))
- '(display-time-mail-string "")
- '(display-time-mode t)
  '(eshell-directory-name "/Users/jesus/.emacs.d/savefile/eshell")
  '(f90-beginning-ampersand nil)
  '(f90-leave-line-no t)
@@ -136,41 +129,6 @@
  '(fill-column 75)
  '(font-latex-fontify-script nil)
  '(fortran-line-length 1000)
- '(gnus-agent-enable-expiration (quote DISABLE))
- '(gnus-build-sparse-threads (quote more))
- '(gnus-cloud-synced-files
-   (quote
-    ("~/.authinfo.gpg" "~/.gnus.el"
-     (:directory "~/Mail" :match ".*.SCORE\\'"))))
- '(gnus-demon-handlers (quote ((gnus-group-get-new-news 2 t))))
- '(gnus-desktop-notify-behavior (quote gnus-desktop-notify-single))
- '(gnus-desktop-notify-function (quote gnus-desktop-notify-alert))
- '(gnus-desktop-notify-mode t nil (gnus))
- '(gnus-dired-mail-mode (quote message-user-agent))
- '(gnus-extract-address-components (quote mail-extract-address-components))
- '(gnus-fetch-old-headers t)
- '(gnus-group-mode-hook (quote (gnus-topic-mode gnus-agent-mode gnus-demon-init)))
- '(gnus-inhibit-mime-unbuttonizing t)
- '(gnus-message-setup-hook (quote (message-remove-blank-cited-lines)))
- '(gnus-outgoing-message-group "nnimap+post.uv.es:INBOX.Sent Messages")
- '(gnus-refer-thread-use-nnir t)
- '(gnus-select-method
-   (quote
-    (nnimap "post.uv.es"
-            (nnimap-inbox INBOX)
-            (nnimap-stream ssl)
-            (nnimap-authenticator login)
-            (nnimap-expunge non-nil)
-            (nnir-search-engine imap)
-            (nnimap-split-methods default))))
- '(gnus-server-mode-hook (quote (gnus-agent-mode)))
- '(gnus-startup-hook (quote (bbdb-insinuate-gnus)))
- '(gnus-subthread-sort-functions (quote (gnus-thread-sort-by-date)))
- '(gnus-summary-line-format "%U%R%z %(%5k  %-15,15&user-date;  %-23,23f  %B%s%)
-")
- '(gnus-summary-thread-gathering-function (quote gnus-gather-threads-by-references))
- '(gnus-thread-hide-subtree nil)
- '(gnus-thread-sort-functions (quote (gnus-thread-sort-by-most-recent-date)))
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
  '(highlight-symbol-colors
    (--map
@@ -199,29 +157,7 @@
  '(latex-preview-pane-multifile-mode (quote auctex))
  '(locate-command "mdfind -name")
  '(magit-diff-use-overlays nil)
- '(mail-source-delete-old-incoming-confirm t)
- '(mail-source-primary-source (quote non-nil))
- '(mail-user-agent (quote gnus-user-agent))
- '(message-forward-as-mime nil)
- '(message-forward-included-headers (quote ("Subject" "Date" "From" "To")))
- '(message-forward-show-mml nil)
- '(message-kill-buffer-on-exit t)
- '(message-make-forward-subject-function (quote message-forward-subject-fwd))
- '(message-send-mail-function (quote smtpmail-send-it))
- '(message-wash-forwarded-subjects t)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
- '(nnmail-expiry-target "nnimap+post.uv.es:INBOX.Trash")
- '(nnmail-split-methods
-   (quote
-    (("INBOX.Finished" "Subject:.*FINISHED.*")
-     ("INBOX.CONACYT" "^From:.*Conacyt.*")
-     ("INBOX.Junk" "To:.*pachanga.*futbito.*")
-     ("INBOX.Junk" "^From:.*Rolf Rabenseifner.*")
-     ("INBOX.PhD.SEMINARI" "Subject:.*SEMINARI.*")
-     ("INBOS.Junk" "From:.*linkedin.*"))))
- '(nrepl-message-colors
-   (quote
-    ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(org-agenda-files
    (quote
     ("~/lab/software/Python/MachineLearning2017/ML_todo.org")))
@@ -269,23 +205,15 @@
  '(prelude-whitespace nil)
  '(python-shell-interpreter "ipython2")
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
- '(read-mail-command (quote gnus))
  '(reftex-cite-format (quote natbib))
  '(reftex-load-hook (quote (imenu-add-menubar-index)))
  '(reftex-mode-hook (quote (imenu-add-menubar-index)))
  '(reftex-plug-into-AUCTeX t)
  '(scroll-bar-mode nil)
- '(send-mail-function (quote smtpmail-send-it))
  '(shell-file-name "/bin/bash")
  '(show-paren-mode t)
  '(size-indication-mode t)
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
- '(smtpmail-debug-info t)
- '(smtpmail-debug-verb t)
- '(smtpmail-smtp-server "post.uv.es")
- '(smtpmail-smtp-service 465)
- '(smtpmail-smtp-user "jerue")
- '(smtpmail-stream-type (quote ssl))
  '(solarized-use-variable-pitch nil)
  '(tabbar-mode t nil (tabbar))
  '(tabbar-mwheel-mode t nil (tabbar))
@@ -337,17 +265,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; gnus desktop notify
-(gnus-demon-add-scanmail)
-
-;; Initializing pdf-tools
-(pdf-tools-install)
-(eval-after-load 'org '(require 'org-pdfview))
-
-;; Bbdb
-(load "bbdb-com" t)
-;;(bbdb-initialize 'gnus)
-
 ;;---------------------------------------------------------------------
 ;; Key bindings
 ;;---------------------------------------------------------------------
@@ -388,11 +305,6 @@
                                          "*Messages*"
                                          "*Ediff Registry*"))
                  (list "#Emacs"))
-                ((member (buffer-name) '("*Group*"
-                                         "*unsent mail*"
-                                         "*Summary INBOX*"
-                                         "*Article INBOX*"))
-                 (list "#Mail"))
                 ;;                ((string-match-p "^\\*.+\\*$" (buffer-name))
                 ((string-match-p "^\\*.+$" (buffer-name))
                  (list "#Rest"))
@@ -401,8 +313,5 @@
                 ((string-match-p "\*.?Python\[?.*\]?\*" dir)
                  (list "#Python"))
                 (t (list dir))))))
-
-;; '(gnus-desktop-notify-exec-program
-;;   "terminal-notifier appIcon /Users/jesus/Pictures/icons/index.png -sound default -title 'New mail' -message")
 
 ;;; custom.el ends here
