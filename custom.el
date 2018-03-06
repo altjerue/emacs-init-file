@@ -47,6 +47,9 @@
  '(cua-normal-cursor-color "#839496")
  '(cua-overwrite-cursor-color "#b58900")
  '(cua-read-only-cursor-color "#859900")
+ '(custom-safe-themes
+   (quote
+    ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(custom-theme-allow-multiple-selections t)
  '(default-input-method "spanish-prefix")
  '(diary-file "~/org/diary")
@@ -118,8 +121,10 @@
  '(org-tags-column -75)
  '(package-selected-packages
    (quote
-    (zop-to-char zenburn-theme which-key web-mode volatile-highlights vkill undo-tree tabbar smex smartrep smartparens smart-mode-line rainbow-mode rainbow-delimiters ov org-projectile operate-on-number move-text magit json-mode js2-mode imenu-anywhere helm-projectile guru-mode grizzl god-mode gnuplot-mode gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck flx-ido expand-region exec-path-from-shell elisp-slime-nav editorconfig easy-kill discover-my-major diminish diff-hl crux company-auctex company-anaconda cdlatex browse-kill-ring beacon anzu ace-window)))
+    (scss-mode markdown-mode yaml-mode anaconda-mode async avy company dash git-commit helm helm-core ht ido-completing-read+ ido-ubiquitous magit-popup marshal org projectile s with-editor yasnippet zop-to-char zenburn-theme which-key web-mode volatile-highlights vkill undo-tree tabbar smex smartrep smartparens smart-mode-line rainbow-mode rainbow-delimiters ov org-projectile operate-on-number move-text magit json-mode js2-mode imenu-anywhere helm-projectile guru-mode grizzl god-mode gnuplot-mode gitignore-mode gitconfig-mode git-timemachine gist geiser flycheck flx-ido expand-region exec-path-from-shell elisp-slime-nav editorconfig easy-kill discover-my-major diminish diff-hl crux company-auctex company-anaconda cdlatex browse-kill-ring beacon anzu ace-window)))
+ '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(prelude-whitespace nil)
+ '(python-shell-interpreter "ipython")
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(reftex-cite-format (quote natbib))
  '(reftex-load-hook (quote (imenu-add-menubar-index)))
@@ -130,8 +135,8 @@
  '(size-indication-mode t)
  '(solarized-use-variable-pitch nil)
  '(tabbar-mode t nil (tabbar))
- '(tabbar-use-images nil)
  '(tabbar-mwheel-mode t nil (tabbar))
+ '(tabbar-use-images nil)
  '(term-default-bg-color "#002b36")
  '(term-default-fg-color "#839496")
  '(tool-bar-mode nil)
@@ -172,7 +177,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "#3F3F3F" :foreground "#DCDCCC" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "nil" :family "Roboto Mono Medium for Powerline")))))
+ '(default ((t (:height 120 :family "Roboto Mono Medium for Powerline")))))
 
 ;; (provide 'custom)
 
@@ -181,8 +186,8 @@
 ;;---------------------------------------------------------------------
 ;; Key bindings
 ;;---------------------------------------------------------------------
-(global-set-key (kbd "s-w") 'kill-this-buffer)
-(global-set-key (kbd "C-x C-c") 'delete-frame)
+;; (global-set-key (kbd "s-w") 'kill-this-buffer)
+;; (global-set-key (kbd "C-x C-c") 'delete-frame)
 
 ;;---------------------------------------------------------------------
 ;; Fortran 90 programming

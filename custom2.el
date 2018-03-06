@@ -29,7 +29,6 @@
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(scroll-bar-mode nil)
  '(show-paren-style (quote mixed))
- '(tabbar-mode t nil (tabbar))
  '(tabbar-use-images nil)
  '(tramp-default-method "sshx")
  '(user-mail-address "jesus.rueda@uv.es"))
@@ -38,7 +37,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4")))))
+ )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -94,7 +93,7 @@
 ;;---------------------------------------------------------------------
 ;; Start Server
 ;;---------------------------------------------------------------------
-(server-start)
+;;(server-start)
 
 ;; define function to shutdown emacs server instance
 (defun server-shutdown ()
