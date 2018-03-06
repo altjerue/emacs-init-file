@@ -11,35 +11,36 @@
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(auto-dim-other-buffers-mode t)
  '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
- '(blink-cursor-mode nil)
  '(calendar-date-style (quote european))
  '(column-number-mode t)
+ '(company-quickhelp-color-background "#4F4F4F")
+ '(company-quickhelp-color-foreground "#DCDCCC")
  '(compilation-message-face (quote default))
  '(confirm-kill-emacs (quote yes-or-no-p))
+ '(cursor-type (quote bar))
  '(custom-enabled-themes (quote (snazzy smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "d9850d120be9d94dd7ae69053630e89af8767c36b131a3aa7b06f14007a24656" "0809485f08aa8c9b0100033eaa2d04f6a7410c2afcdbd76ce368a7a8e5744ffb" default)))
+    ("0809485f08aa8c9b0100033eaa2d04f6a7410c2afcdbd76ce368a7a8e5744ffb" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
  '(custom-theme-allow-multiple-selections t)
  '(f90-mode-hook (quote (f90-add-imenu-menu abbrev-mode auto-fill-mode)))
  '(f90-program-indent 0)
  '(fill-column 75)
  '(font-latex-fontify-script nil)
  '(fortran-line-length 1000)
+ '(global-hl-line-mode nil)
  '(indicate-empty-lines t)
  '(mouse-wheel-scroll-amount (quote (1 ((shift) . 1) ((control)))))
  '(package-selected-packages
    (quote
-    (neotree tabbar auto-dim-other-buffers geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-completing-read+ flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
+    (helm snazzy-theme neotree tabbar auto-dim-other-buffers geiser json-mode js2-mode rainbow-mode elisp-slime-nav rainbow-delimiters company smex ido-completing-read+ flx-ido vkill exec-path-from-shell zop-to-char zenburn-theme which-key volatile-highlights undo-tree smartrep smartparens smart-mode-line operate-on-number move-text magit projectile ov imenu-anywhere guru-mode grizzl god-mode gitignore-mode gitconfig-mode git-timemachine gist flycheck expand-region epl editorconfig easy-kill diminish diff-hl discover-my-major dash crux browse-kill-ring beacon anzu ace-window)))
  '(prelude-whitespace nil)
  '(python-shell-interpreter "ipython")
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(scroll-bar-mode nil)
  '(show-paren-style (quote mixed))
  '(size-indication-mode t)
- '(tabbar-mode t nil (tabbar))
  '(tabbar-use-images nil)
- '(tool-bar-mode nil)
  '(tramp-default-method "sshx")
  '(user-mail-address "jesus.rueda@uv.es"))
 (custom-set-faces
@@ -55,7 +56,7 @@
 ;; Key bindings
 ;;---------------------------------------------------------------------
 (global-set-key (kbd "s-w") 'kill-this-buffer)
-(global-set-key (kbd "C-x C-c") 'delete-frame)
+;; (global-set-key (kbd "C-x C-c") 'delete-frame)
 
 ;;---------------------------------------------------------------------
 ;; Fortran 90 programming
