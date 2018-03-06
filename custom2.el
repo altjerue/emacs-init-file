@@ -11,9 +11,16 @@
  '(TeX-PDF-via-dvips-ps2pdf t)
  '(auto-dim-other-buffers-mode t)
  '(backup-directory-alist (quote ((".*" . "/Users/jesus/.ebackups/"))))
+ '(blink-cursor-mode nil)
  '(calendar-date-style (quote european))
+ '(column-number-mode t)
  '(compilation-message-face (quote default))
  '(confirm-kill-emacs (quote yes-or-no-p))
+ '(custom-enabled-themes (quote (snazzy smart-mode-line-respectful)))
+ '(custom-safe-themes
+   (quote
+    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "d9850d120be9d94dd7ae69053630e89af8767c36b131a3aa7b06f14007a24656" "0809485f08aa8c9b0100033eaa2d04f6a7410c2afcdbd76ce368a7a8e5744ffb" default)))
+ '(custom-theme-allow-multiple-selections t)
  '(f90-mode-hook (quote (f90-add-imenu-menu abbrev-mode auto-fill-mode)))
  '(f90-program-indent 0)
  '(fill-column 75)
@@ -29,7 +36,10 @@
  '(python-shell-interpreter-args "--simple-prompt -i --automagic")
  '(scroll-bar-mode nil)
  '(show-paren-style (quote mixed))
+ '(size-indication-mode t)
+ '(tabbar-mode t nil (tabbar))
  '(tabbar-use-images nil)
+ '(tool-bar-mode nil)
  '(tramp-default-method "sshx")
  '(user-mail-address "jesus.rueda@uv.es"))
 (custom-set-faces
@@ -37,7 +47,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(auto-dim-other-buffers-face ((t (:foreground "AntiqueWhite4")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -93,7 +103,7 @@
 ;;---------------------------------------------------------------------
 ;; Start Server
 ;;---------------------------------------------------------------------
-;;(server-start)
+;; (server-start)
 
 ;; define function to shutdown emacs server instance
 (defun server-shutdown ()
