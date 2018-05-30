@@ -22,12 +22,9 @@
  '(compilation-message-face (quote default))
  '(confirm-kill-emacs (quote yes-or-no-p))
  '(cursor-type (quote bar))
- ;; '(custom-enabled-themes (quote (smart-mode-line-dark)))
- '(custom-enabled-themes (quote (snazzy smart-mode-line-respectful)))
  '(custom-safe-themes
    (quote
     ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "0809485f08aa8c9b0100033eaa2d04f6a7410c2afcdbd76ce368a7a8e5744ffb" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
- '(custom-theme-allow-multiple-selections t)
  '(f90-mode-hook (quote (f90-add-imenu-menu abbrev-mode auto-fill-mode)))
  '(fci-rule-color "#383838")
  '(fill-column 80)
